@@ -14,7 +14,7 @@ sudo apt-get install ros-kinetic-navigation
 sudo apt-get install ros-kinetic-slam-gmapping
 sudo apt-get install ros-kinetic-teleop-twist-keyboard
 ```
-Start the robot world:
+1.Start the robot world:
 -----------
 ```
 roslaunch omni_gazebo omni_world.launch
@@ -23,3 +23,9 @@ You can teleop the robot by using this command:
 ```
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py  
 ```
+2.Start the gmapping:
+-----------
+```
+roslaunch omni_slam omni_gmapping.launch
+```
+If you find there has some obstacles in RVIZ,you can uncheck the Odometry option to hide them. 
