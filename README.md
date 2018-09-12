@@ -33,7 +33,7 @@ If you find there has some obstacles in RVIZ,you can uncheck the Odometry option
 ```
 rosrun map_server map_saver -f map
 ```
-3.Satrt the navigation:
+3.Start the navigation:
 -------------
 In this project,I prepare three open source projects:mrobot,turtlebot3 and husky.I create the navigation bag on the basis of this.
 
