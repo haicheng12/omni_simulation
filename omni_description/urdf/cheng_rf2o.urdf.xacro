@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<robot name="cheng" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:include filename="$(find omni_description)/urdf/common_properties.xacro"/>
+  <xacro:include filename="$(find omni_description)/urdf/cheng_rf2o.gazebo.xacro"/>
+
+  <xacro:property name="r200_cam_rgb_px" value="0.005"/>
+  <xacro:property name="r200_cam_rgb_py" value="0.018"/>
+  <xacro:property name="r200_cam_rgb_pz" value="0.013"/>
+  <xacro:property name="r200_cam_depth_offset" value="0.01"/>
+
+  <link name="base_footprint"/>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+    <origin xyz="0 0 0.010" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://omni_description/meshes/bases/base_link.STL" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://omni_description/meshes/bases/base_link.STL" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="0.00378663513268997 9.40774172533659E-09 0.0314233104502576" rpy="0 0 0" />
+      <mass  value="1.6508919043092" />
+      <inertia ixx="0.0196254631580707" ixy="-6.01430009402836E-11" ixz="-0.000206095816270248"
+               iyy="0.0196677902371779" iyz="1.90034891428728E-10"
+               izz="0.0353923816890368" />
+    </inertial>
+  </link>
+
+  <link name="wheel_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://omni_description/meshes/wheels/wheel_1.STL" />
+      </geometry>
+      <material name="dark"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://omni_description/meshes/wheels/wheel_1.STL" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="-0.0110093255420785 -0.00219029618447689 -0.0869776983683515" rpy="0 0 0" />
+      <mass value="1.26046104063225" />
+      <inertia ixx="0.00358551237977162" ixy="-5.35757383827677E-07" ixz="-9.7742061913025E-06"
+               iyy="0.00356891337593086" iyz="-5.2157594181081E-05"
+               izz="0.000632447806398812" />
+    </inertial>
+  </link>
+
+  <joint name="base_to_wheel1" type="fixed">
+    <origin xyz="0.274999999999979 -0.0109314796425938 0.0326524329692152" rpy="-1.5707963267949 -6.12303176911189E-17 -1.5707963267949" />
+    <parent link="base_link" />
+    <child link="wheel_1" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <link name="wheel_2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://omni_description/meshes/wheels/wheel_2.STL" />
+      </geometry>
+      <material name="dark"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://omni_description/meshes/wheels/wheel_2.STL" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="-0.0110093255442737 0.00219029629808571 0.0869776978531889" rpy="0 0 0" />
+      <mass value="1.26046106534982" />
+      <inertia ixx="0.00358551231200165" ixy="5.3575737679716E-07" ixz="9.77420636918858E-06"
+               iyy="0.00356891330797798" iyz="-5.21575978589779E-05"
+               izz="0.000632447806573278" />
+    </inertial>
+  </link>
+
+  <joint name="base_to_wheel2" type="fixed">
+    <origin xyz="-0.128033060928559 0.243622725861994 0.0326524329692152" rpy="1.5707963267949 3.06151588454563E-17 0.523598775596354" />
+    <parent link="base_link" />
+    <child link="wheel_2" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <link name="wheel_3">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://omni_description/meshes/wheels/wheel_3.STL" />
+      </geometry>
+      <material name="dark"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://omni_description/meshes/wheels/wheel_3.STL" />
+      </geometry>
+    </collision>
+
+    <inertial>
+      <origin xyz="-0.0110093255220512 0.0021902960708142 0.0869776988816526" rpy="0 0 0" />
+      <mass value="1.26046101591689" />
+      <inertia ixx="0.00358551244745713" ixy="5.35757376420613E-07" ixz="9.77420528667985E-06"
+               iyy="0.00356891344380256" iyz="-5.21575905001385E-05"
+               izz="0.000632447806238922" />
+    </inertial>
+  </link>
+
+  <joint name="base_to_wheel3" type="fixed">
+    <origin xyz="-0.14696693907143 -0.232691246219403 0.0326524329692152" rpy="1.5707963267949 3.06151588456647E-17 2.61799387798951" />
+    <parent link="base_link" />
+    <child link="wheel_3" />
+    <axis xyz="0 0 0" />
+  </joint>
+
+  <!-- imu joint -->
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0.0 0 0.068" rpy="0 0 0"/>
+  </joint>
+
+  <!-- imu data -->
+  <link name="imu_link"/>
+
+  <!-- Hokuyo joint -->
+  <joint name="hokuyo_joint" type="fixed">
+    <origin xyz="0.09 0 0.15" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <axis xyz="0 1 0" />
+    <child link="hokuyo_link"/>
+  </joint>
+
+  <!-- Hokuyo Laser -->
+  <link name="hokuyo_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+	<box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://omni_description/meshes/sensors/hokuyo.dae"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <!--joint name="scan_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_scan"/>
+    <origin xyz="0.09 0 0.15" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_scan">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://omni_description/meshes/sensors/lds.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="dark"/>
+    </visual>
+
+    <collision>
+      <origin xyz="0.015 0 -0.0065" rpy="0 0 0"/>
+      <geometry>
+        <cylinder length="0.0315" radius="0.055"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.114" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.001" ixy="0.0" ixz="0.0"
+               iyy="0.001" iyz="0.0"
+               izz="0.001" />
+    </inertial>
+  </link-->
+
+  <!-- camera joint -->
+  <joint name="camera_joint" type="fixed">
+    <origin xyz="0.064 -0.065 0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+  </joint>
+
+  <!-- camera link -->
+  <link name="camera_link">
+    <visual>
+     <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
+      <geometry>
+       <mesh filename="package://omni_description/meshes/sensors/r200.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.003 0.065 0.007" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.012 0.132 0.020"/>
+      </geometry>
+    </collision>
+
+    <!-- This inertial field needs doesn't contain reliable data!! -->
+<!--   <inertial>
+      <mass value="0.564" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="0.003881243" ixy="0.0" ixz="0.0"
+               iyy="0.000498940" iyz="0.0"
+               izz="0.003879257" />
+    </inertial>-->
+  </link>
+
+  <joint name="camera_rgb_joint" type="fixed">
+    <origin xyz="${r200_cam_rgb_px} ${r200_cam_rgb_py} ${r200_cam_rgb_pz}" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_rgb_frame"/>
+  </joint>
+  <link name="camera_rgb_frame"/>
+
+  <joint name="camera_rgb_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+    <parent link="camera_rgb_frame"/>
+    <child link="camera_rgb_optical_frame"/>
+  </joint>
+  <link name="camera_rgb_optical_frame"/>
+
+  <joint name="camera_depth_joint" type="fixed">
+    <origin xyz="${r200_cam_rgb_px} ${r200_cam_rgb_py + r200_cam_depth_offset} ${r200_cam_rgb_pz}" rpy="0 0 0"/>
+    <parent link="camera_link"/>
+    <child link="camera_depth_frame"/>
+  </joint>
+  <link name="camera_depth_frame"/>
+
+  <joint name="camera_depth_optical_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="-1.57 0 -1.57"/>
+    <parent link="camera_depth_frame"/>
+    <child link="camera_depth_optical_frame"/>
+  </joint>
+  <link name="camera_depth_optical_frame"/>
+
+</robot>
