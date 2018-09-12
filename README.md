@@ -28,4 +28,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 roslaunch omni_slam omni_gmapping.launch
 ```
-If you find there has some obstacles in RVIZ,you can uncheck the Odometry option to hide them. 
+If you find there has some obstacles in RVIZ,you can uncheck the Odometry option to hide them. Next,you can teleop the robot to circle the map.And the command of saving the map is:
+```
+rosrun map_server map_saver -f map
+```
