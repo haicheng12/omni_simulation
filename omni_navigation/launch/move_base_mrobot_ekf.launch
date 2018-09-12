@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find omni_navigation)/maps/play.yaml" output="screen"/>
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find omni_navigation)/param/mrobot/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find omni_navigation)/param/mrobot/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find omni_navigation)/param/mrobot/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find omni_navigation)/param/mrobot/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find omni_navigation)/param/mrobot/base_local_planner_params.yaml" command="load" />
+  </node>
+
+　　<!--node pkg="tf" type="static_transform_publisher" name="odom_combined_to_odom" args="0 0 0 0 0 0 odom_combined odom 50"/-->
+
+</launch>
+
+

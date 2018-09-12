@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Run the map server -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find omni_navigation)/maps/play.yaml" output="screen"/>
+
+  <!-- move_base -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+    <rosparam file="$(find omni_navigation)/param/turtlebot3/costmap_common_params_burger.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find omni_navigation)/param/turtlebot3/costmap_common_params_burger.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find omni_navigation)/param/turtlebot3/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find omni_navigation)/param/turtlebot3/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find omni_navigation)/param/turtlebot3/move_base_params.yaml" command="load" />
+    <rosparam file="$(find omni_navigation)/param/turtlebot3/dwa_local_planner_params_burger.yaml" command="load" />
+  </node>
+</launch>
