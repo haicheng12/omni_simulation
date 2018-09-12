@@ -12,6 +12,7 @@ Required configuration environment:
 ```
 sudo apt-get install ros-kinetic-navigation
 sudo apt-get install ros-kinetic-slam-gmapping
+sudo apt-get install ros-kinetic-openslam-gmapping
 sudo apt-get install ros-kinetic-teleop-twist-keyboard
 ```
 1.Start the robot world:
