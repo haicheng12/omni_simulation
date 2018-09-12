@@ -34,7 +34,7 @@ rosrun map_server map_saver -f map
 ```
 3.Satrt the navigation:
 -------------
-In this project,I prepare three open source projects:mrobot,turtlebot3 and husky.I create the navigation bag on this basis.
+In this project,I prepare three open source projects:mrobot,turtlebot3 and husky.I create the navigation bag on the basis of this.
 
 - mrobot:
 ```
