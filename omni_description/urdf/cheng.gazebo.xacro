@@ -56,8 +56,6 @@
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
-      <!--odometryTopic>odom_rf2o</odometryTopic>
-      <odometryFrame>odom_rf2o</odometryFrame-->
       <odometryRate>20.0</odometryRate>
       <robotBaseFrame>base_footprint</robotBaseFrame>
     </plugin>
@@ -125,7 +123,6 @@
       </ray>
       <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_laser.so">
         <topicName>/scan</topicName>
-        <!--topicName>/laser_scan</topicName-->
         <frameName>hokuyo_link</frameName>
       </plugin>
     </sensor>
