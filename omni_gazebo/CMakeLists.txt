@@ -109,7 +109,7 @@ find_package(gazebo REQUIRED)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
+#  INCLUDE_DIRS include
   CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros
   DEPENDS gazebo
 )
@@ -122,7 +122,7 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-  include
+#  include
   ${catkin_INCLUDE_DIRS}
   ${GAZEBO_INCLUDE_DIRS}
 )
