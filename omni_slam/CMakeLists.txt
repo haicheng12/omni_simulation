@@ -9,7 +9,7 @@ project(omni_slam)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  sensor_msgs
+#  sensor_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -101,10 +101,10 @@ find_package(catkin REQUIRED COMPONENTS
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
-catkin_package(
-  INCLUDE_DIRS include
-  CATKIN_DEPENDS roscpp sensor_msgs 
-)
+#catkin_package(
+#  INCLUDE_DIRS include
+#  CATKIN_DEPENDS roscpp sensor_msgs 
+#)
 
 ###########
 ## Build ##
@@ -112,10 +112,10 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(
-  include
-  ${catkin_INCLUDE_DIRS}
-)
+#include_directories(
+#  include
+#  ${catkin_INCLUDE_DIRS}
+#)
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
