@@ -20,6 +20,9 @@ sudo apt-get install ros-kinetic-teleop-twist-keyboard
 ```
 roslaunch omni_gazebo omni_world.launch
 ```
+If you can't open the gazebo,you can see this blog:
+https://blog.csdn.net/qq_37427972/article/details/82853655
+
 You can teleop the robot by using this command:
 ```
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py  
