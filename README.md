@@ -55,4 +55,5 @@ roslaunch omni_navigation move_base_turtlebot3.launch
 roslaunch omni_navigation navigation_husky.launch
 roslaunch omni_navigation move_base_husky.launch
 ```
-
+Finally,if you want to learn more things,please see:https://blog.csdn.net/mengxiang2425
+And I learn ros by 《ros机器人程序设计》（第二版） and this github:https://github.com/rosbook/effective_robotics_programming_with_ros
